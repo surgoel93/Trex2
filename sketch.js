@@ -97,7 +97,7 @@ function draw() {
     }
   
     if(obstaclesGroup.isTouching(trex)){
-      //dieSound.play();
+      dieSound.play();
         gameState = END;
     }
   }
