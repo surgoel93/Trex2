@@ -93,11 +93,11 @@ function draw() {
     spawnObstacles();
     
     if(score > 0 && score % 10 === 0){
-     //checkPointSound.play(); 
+     checkPointSound.play(); 
     }
   
     if(obstaclesGroup.isTouching(trex)){
-      dieSound.play();
+      //dieSound.play();
         gameState = END;
     }
   }
