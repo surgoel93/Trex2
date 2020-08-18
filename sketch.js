@@ -12,7 +12,7 @@ var score=0;
 
 var gameOver, restart;
 
-localStorage["HighestScore"] = 0;
+
 
 function preload(){
   trex_running =   loadAnimation("trex1.png","trex3.png","trex4.png");
@@ -97,11 +97,11 @@ function draw() {
     spawnObstacles();
     
     if(score > 0 && score % 10 === 0){
-     checkPointSound.play(); 
+     //checkPointSound.play(); 
     }
   
     if(obstaclesGroup.isTouching(trex)){
-      dieSound.play();
+      //dieSound.play();
         gameState = END;
     }
   }
@@ -194,12 +194,5 @@ function reset(){
   cloudsGroup.destroyEach();
   
   trex.changeAnimation("running",trex_running);
-  
-  if(localStorage["HighestScore"]<score){
-    localStorage["HighestScore"] = score;
+    score = 0;
   }
-  console.log(localStorage["HighestScore"]);
-  
-  score = 0;
-  
-}
