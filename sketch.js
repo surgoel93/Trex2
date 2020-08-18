@@ -79,7 +79,7 @@ function draw() {
   
   if (gameState===PLAY){
     score = score + Math.round(getFrameRate()/60);
-    ground.velocityX = -(6 + 3*score/100);
+    
   
     if(keyDown("space") && trex.y >= 159) {
       jumpSound.play();
@@ -96,7 +96,7 @@ function draw() {
     spawnClouds();
     spawnObstacles();
     
-    if(score > 0 && score % 100 === 0){
+    if(score>0 && score%100 === 0){
      checkPointSound.play(); 
     }
   
@@ -187,6 +187,9 @@ function spawnObstacles() {
 
 function reset(){
   gameState = PLAY;
+  
+  ground.velocityX = -(6 + 3*score/100);
+  
   gameOver.visible = false;
   restart.visible = false;
   
